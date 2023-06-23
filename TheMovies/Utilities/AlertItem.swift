@@ -32,4 +32,7 @@ enum AlertContext {
     static let invalidData      = AlertItem(title: Text("Server Error"),
                                             message: Text("The data received from the server was invalid. Please try again or contact support."),
                                             dismissButton: .default(Text("Ok")))
+    static let decodingError      = AlertItem(title: Text("Internal Error"),
+                                            message: Text("The data received from the server was in bad format. Please contact support."),
+                                            dismissButton: .default(Text("Ok")))
 }

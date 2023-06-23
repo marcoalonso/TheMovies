@@ -9,39 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     
-    
+    @StateObject private var viewModel = MoviesViewModel()
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }.onAppear {
-            NetworkManager.shared.getLisOfNews { result in
-                switch result {
-                case .success(let movies):
-                    print("Movies: \(movies.count)")
-                    print("1 Movie: \(movies.first)")
-                case .failure(let error):
-                    switch error {
-                    case .invalidData:
-                        print("Error invalidData")
-                        
-                    case .invalidURL:
-                        print("Error invalidURL")
-                        
-                    case .invalidResponse:
-                        print("Error invalidResponse")
-                        
-                    case .unableToComplete:
-                        print("Error unableToComplete")
-                    case .decodingError:
-                        print("Error decodingError")
-                    }
-                }
+            Text("Movies Founded: \(viewModel.movies.count)")
+            
+            AsyncImage(url: URL(string: "\(Constants.urlImages)\(viewModel.movies.first?.poster_path ?? Constants.placeholder)")) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                
+            } placeholder: {
+                ProgressView()
             }
-        }
+            .frame(width: 350, height: 350)
+            .cornerRadius(15)
+            .shadow(radius: 12)
+            
+            Spacer()
+        }.onAppear { viewModel.getLisOfNews() }
         .padding()
     }
 }

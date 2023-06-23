@@ -86,3 +86,7 @@ class NetworkManager: NSObject {
     }
 }
 
+struct Constants {
+    static let urlImages = "https://image.tmdb.org/t/p/original"
+    static let placeholder = "https://cringemdb.com/img/movie-poster-placeholder.png"
+}
