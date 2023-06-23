@@ -11,26 +11,47 @@ struct MoviesView: View {
     
     @StateObject private var viewModel = MoviesViewModel()
     
-    
-    private let adaptiveColumns = [
-        GridItem(.adaptive(minimum: 150))
-    ]
+   
+    var gridItemLayout = [GridItem(.flexible())]
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack {
-                    LazyVGrid(columns: adaptiveColumns, spacing: 15) {
-                        ForEach(viewModel.movies, id: \.id) { movie in
-                            NavigationLink {
-                                MovieDetailView(movie: movie)
-                            } label: {
-                                MovieCell(movie: movie)
+            VStack {
+                ScrollView(.horizontal) {
+                    LazyHGrid(rows: gridItemLayout, spacing: 50) {
+                            ForEach(viewModel.movies, id: \.id) { movie in
+                                NavigationLink {
+                                    MovieDetailView(movie: movie)
+                                } label: {
+                                    MovieCell(movie: movie)
+                                }
                             }
-
-                        }
-                    }
-                }
+                        }///LazyHGrid
+                }//Scrolview
+                
+                ScrollView(.horizontal) {
+                    LazyHGrid(rows: gridItemLayout, spacing: 50) {
+                            ForEach(viewModel.movies, id: \.id) { movie in
+                                NavigationLink {
+                                    MovieDetailView(movie: movie)
+                                } label: {
+                                    MovieCell(movie: movie)
+                                }
+                            }
+                        }///LazyHGrid
+                }//Scrolview
+                
+                ScrollView(.horizontal) {
+                    LazyHGrid(rows: gridItemLayout, spacing: 50) {
+                            ForEach(viewModel.movies, id: \.id) { movie in
+                                NavigationLink {
+                                    MovieDetailView(movie: movie)
+                                } label: {
+                                    MovieCell(movie: movie)
+                                }
+                            }
+                        }///LazyHGrid
+                }//Scrolview
             }
             .navigationBarTitle("Estrenos", displayMode: .inline)
         }

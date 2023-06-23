@@ -11,7 +11,6 @@ import SwiftUI
 struct TheMoviesApp: App {
     var body: some Scene {
         WindowGroup {
-//            MovieDetailView(idVideo: "0LiuqkDZbRw", movie: nil)
             MoviesView()
         }
     }

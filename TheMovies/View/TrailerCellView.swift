@@ -26,6 +26,7 @@ struct TrailerCellView: View {
             }
             .frame(width: 100, height: 70)
             .shadow(radius: 12)
+            .padding(.trailing, 15)
             
             VStack {
                 Text(trailer?.name ?? "")
@@ -34,7 +35,7 @@ struct TrailerCellView: View {
                 
                 Text(trailer?.published_at ?? "")
                     .font(.footnote)
-            }
+            }.padding(6)
             
         }
     }
