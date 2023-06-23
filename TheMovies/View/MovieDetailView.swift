@@ -16,13 +16,14 @@ struct MovieDetailView: View {
     var idVideo: String = ""
     
     var body: some View {
-        VStack {
-            Text(movie?.title ?? movie?.original_title ?? "")
+        VStack(spacing: 10.0) {
             
             if !viewModel.listOfTrailers.isEmpty {
-                YTWrapper(videoID: "\(viewModel.listOfTrailers[0].key)")
-                                .frame(height: 300)
-                                .cornerRadius(12)
+                withAnimation {
+                    YTWrapper(videoID: "\(viewModel.listOfTrailers[0].key)")
+                                    .frame(height: 200)
+                                    .cornerRadius(12)
+                }
             }
            
             if viewModel.isLoading {
@@ -30,9 +31,39 @@ struct MovieDetailView: View {
             }
             
             Text(movie?.overview ?? "")
+                .multilineTextAlignment(.center)
+                .font(.body)
+            
+            Text(movie?.release_date ?? "")
+                .font(.title3)
+            
                 
+            List(viewModel.listOfTrailers, id: \.key) { trailer in
+                HStack {
+                    AsyncImage(url: URL(string: movie?.backdrop_path ?? "")) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                        
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: 80, height: 50)
+                    .clipShape(Circle())
+                    .shadow(radius: 12)
+                    
+                    VStack {
+                        Text(trailer.name)
+                        Text(trailer.published_at)
+                    }
+                    .font(.body)
+                }
+            }
+            .listStyle(.grouped)
+            .frame(maxHeight: 300)
             
             Spacer()
+                .navigationBarTitle(movie?.title ?? movie?.original_title ?? "", displayMode: .inline)
         }
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
@@ -40,7 +71,8 @@ struct MovieDetailView: View {
         .onAppear {
             viewModel.getTrailers(id: movie?.id ?? 536437)
         }
-        .padding(15)
+        .padding(5)
+        
     }
 }
 

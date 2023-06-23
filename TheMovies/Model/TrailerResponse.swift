@@ -14,4 +14,7 @@ struct TrailerResponse: Codable {
 
 struct Trailer: Codable {
     let key: String
+    let name: String
+    let type: String
+    let published_at: String
 }
