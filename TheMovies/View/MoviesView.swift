@@ -16,54 +16,57 @@ struct MoviesView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                
-                Text("Proximos estrenos")
-                    .font(.title)
-                    .foregroundColor(.accentColor)
-                
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: gridItemLayout, spacing: 50) {
+            ScrollView {
+                VStack(spacing: 10.0) {
+                    Text("Próximos estrenos")
+                        .font(.largeTitle)
+                        .foregroundColor(.accentColor)
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: gridItemLayout, spacing: 20) {
                             ForEach(viewModel.upcomingMovies, id: \.id) { movie in
                                 NavigationLink {
                                     MovieDetailView(movie: movie)
                                 } label: {
                                     MovieCell(movie: movie)
+                                        .frame(width: 200, height: 300)
                                 }
                             }
-                        }///LazyHGrid
-                }//Scrolview
-                
-                Text("Ahora en cines")
-                    .font(.title)
-                    .foregroundColor(.accentColor)
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: gridItemLayout, spacing: 50) {
+                        }//LazyHGrid
+                    }
+                    
+                    
+                    Text("Ahora en cines")
+                        .font(.largeTitle)
+                        .foregroundColor(.accentColor)
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: gridItemLayout, spacing: 20) {
                             ForEach(viewModel.nowplayingMovies, id: \.id) { movie in
                                 NavigationLink {
                                     MovieDetailView(movie: movie)
                                 } label: {
                                     MovieCell(movie: movie)
+                                        .frame(width: 150, height: 200)
                                 }
                             }
-                        }///LazyHGrid
-                }//Scrolview
-                
-                Text("Tendencia")
-                    .font(.title)
-                    .foregroundColor(.accentColor)
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: gridItemLayout, spacing: 50) {
+                        }//LazyHGrid
+                    }
+                    
+                    Text("Tendencia")
+                        .font(.largeTitle)
+                        .foregroundColor(.accentColor)
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: gridItemLayout, spacing: 20) {
                             ForEach(viewModel.trendingMovies, id: \.id) { movie in
                                 NavigationLink {
                                     MovieDetailView(movie: movie)
                                 } label: {
                                     MovieCell(movie: movie)
+                                        .frame(width: 300, height: 400)
                                 }
                             }
-                        }///LazyHGrid
-                }//Scrolview
-                
+                        }//LazyHGrid
+                    }
+                }.padding(20)
             }
         }
     }

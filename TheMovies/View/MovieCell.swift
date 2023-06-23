@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MovieCell: View {
     
@@ -13,18 +14,12 @@ struct MovieCell: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: "\(Constants.urlImages)\(movie.poster_path ?? Constants.placeholder)")) { image in
-                image
-                    .resizable()
-                    .frame(width: 150, height: 200)
-                    .aspectRatio(contentMode: .fill)
-                    .cornerRadius(12)
-                    .shadow(radius: 12)
-                
-                
-            } placeholder: {
-                ProgressView()
-            }
+            KFImage(URL(string: "\(Constants.urlImages)\(movie.poster_path ?? Constants.placeholder)"))
+                .resizable()
+                .placeholder({ progres in
+                    ProgressView()
+                })
+                .cornerRadius(12)
         }
     }
 }
