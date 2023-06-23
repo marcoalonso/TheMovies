@@ -1,31 +1,25 @@
 //
-//  MoviesViewModel.swift
+//  TrailerViewModel.swift
 //  TheMovies
 //
-//  Created by Marco Alonso Rodriguez on 22/06/23.
+//  Created by Marco Alonso Rodriguez on 23/06/23.
 //
 
 import Foundation
 
-final class MoviesViewModel: ObservableObject {
-    @Published var movies: [DataMovie] = []
+class TrailerViewModel: ObservableObject {
+    @Published var listOfTrailers: [Trailer] = []
     @Published var isLoading: Bool = false
     @Published var alertItem: AlertItem?
     
-    init() {
-        getLisOfNews()
-    }
-    
-    func getLisOfNews() {
-        isLoading = true
-        
-        NetworkManager.shared.getLisOfNews { [weak self] result in
+    func getTrailers(id: Int){
+        NetworkManager.shared.getLisOfTrailers(id: id) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self else { return }
-                self.isLoading = false
+                
                 switch result {
-                case .success(let movies):
-                    self.movies = movies
+                case .success(let trailers):
+                    self.listOfTrailers = trailers
                     
                 case .failure(let error):
                     switch error {
@@ -48,5 +42,5 @@ final class MoviesViewModel: ObservableObject {
             }
         }
     }
+    
 }
-

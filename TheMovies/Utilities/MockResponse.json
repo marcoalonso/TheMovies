@@ -1,0 +1,414 @@
+{
+  "dates": {
+    "maximum": "2023-07-18",
+    "minimum": "2023-06-29"
+  },
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/vQ5T84t8h4N2xAswNFW9fkVIyZq.jpg",
+      "genre_ids": [
+        9648,
+        53,
+        878
+      ],
+      "id": 536437,
+      "original_language": "en",
+      "original_title": "Hypnotic",
+      "overview": "Un detective se ve envuelto en un misterio en el que está involucrada su hija desaparecida y un programa secreto del gobierno mientras investiga una serie de atracos de alto nivel.",
+      "popularity": 1378.863,
+      "poster_path": "/3IhGkkalwXguTlceGSl8XUJZOVI.jpg",
+      "release_date": "2023-05-11",
+      "title": "Hypnotic",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 214
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kIX6VS5FTMURcK3WlNNkPss60e4.jpg",
+      "genre_ids": [
+        878,
+        28,
+        12
+      ],
+      "id": 298618,
+      "original_language": "en",
+      "original_title": "The Flash",
+      "overview": "Cuando su intento de salvar a su familia altera el futuro sin darse cuenta, Barry Allen queda atrapado en una realidad en la que el general Zod ha regresado y no hay superhéroes a los que recurrir. En última instancia, para salvar el mundo en el que se encuentra y regresar al futuro que conoce, la única esperanza de Barry es escapar de él para salvar su vida. Pero, ¿será suficiente hacer el último sacrificio para reiniciar el universo?",
+      "popularity": 1265.244,
+      "poster_path": "/x9Qc86JEyYkAKsdzjDpS5kbaAB7.jpg",
+      "release_date": "2023-06-13",
+      "title": "Flash",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 500
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9t0tJXcOdWwwxmGTk112HGDaT0Q.jpg",
+      "genre_ids": [
+        27,
+        53
+      ],
+      "id": 890771,
+      "original_language": "en",
+      "original_title": "The Black Demon",
+      "overview": "Josh Lucas (Ford v Ferrari) protagoniza este intenso thriller de acción en el que unas vacaciones familiares se convierten en una lucha por la supervivencia contra un tiburón megalodón que ve a los humanos como una amenaza para su territorio. ¿Podrán salir con vida antes de que el tiburón vuelva a atacar?",
+      "popularity": 897.877,
+      "poster_path": "/ohxEF8mZb7eVeUZonUk60BAVN5u.jpg",
+      "release_date": "2023-04-26",
+      "title": "Demonio negro",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 201
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cSYLX73WskxCgvpN3MtRkYUSj1T.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10751,
+        14,
+        10749
+      ],
+      "id": 976573,
+      "original_language": "en",
+      "original_title": "Elemental",
+      "overview": "En una ciudad en la que conviven el fuego, el agua, la tierra y el aire, una joven llena de fuego y un tipo que fluye descubrirán lo mucho que tienen en común.",
+      "popularity": 779.49,
+      "poster_path": "/qMcmZ4bsobOCv210dMUUFnSOD3m.jpg",
+      "release_date": "2023-06-14",
+      "title": "Elementos",
+      "video": false,
+      "vote_average": 7.6,
+      "vote_count": 85
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/94TIUEhuwv8PhdIADEvSuwPljS5.jpg",
+      "genre_ids": [
+        28,
+        10752
+      ],
+      "id": 840326,
+      "original_language": "fi",
+      "original_title": "Sisu",
+      "overview": "Durante los últimos y desesperados días de la Segunda Guerra Mundial, un solitario buscador de oro (Jorma Tommila) se cruza con los nazis en una retirada al norte de Finlandia. Cuando los nazis le roban el oro, descubren rápidamente que no se han metido con un minero cualquiera. Aunque no existe una traducción directa de la palabra finlandesa \"sisu\", este legendario ex-comando encarnará lo que significa sisu: una forma de coraje y determinación inimaginables frente a probabilidades abrumadoras. Y no importa lo que los nazis le echen encima, el escuadrón de la muerte de un solo hombre hará todo lo posible por recuperar su oro, aunque eso signifique matar a todos los nazis que se crucen en su camino.",
+      "popularity": 718.076,
+      "poster_path": "/t9VXZkgcxpIwfPUKAWOOONs0vHv.jpg",
+      "release_date": "2023-01-27",
+      "title": "Sisu",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 736
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2EL6QrQmUt2ntBXjuHO4KsEfaoU.jpg",
+      "genre_ids": [
+        27,
+        53
+      ],
+      "id": 758323,
+      "original_language": "en",
+      "original_title": "The Pope's Exorcist",
+      "overview": "El Padre Gabriele Amorth, Exorcista Principal del Vaticano investiga la terrorífica posesión de un niño y termina descubriendo una conspiración que hace siglos fue encubierta de manera desesperada por el Vaticano.",
+      "popularity": 556.847,
+      "poster_path": "/4n7HJ322ARRWytwxLKEZi0mIrYE.jpg",
+      "release_date": "2023-04-05",
+      "title": "El exorcista del Papa",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 1441
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cKE9qZqYtF4jimf0GFOqKfy7NEU.jpg",
+      "genre_ids": [
+        35,
+        10749,
+        18
+      ],
+      "id": 884605,
+      "original_language": "en",
+      "original_title": "No Hard Feelings",
+      "overview": "A punto de perder la casa en la que creció, Maddie descubre un intrigante anuncio clasificado de un trabajo: padres helicóptero millonarios buscan a alguien para poder “salir” con su hijo introvertido de 19 años, Percy, antes de que se vaya a la universidad. Para su sorpresa, Maddie, pronto descubre que el extraño Percy no es una cosa segura.",
+      "popularity": 306.674,
+      "poster_path": "/hKlpYtDLBtJEvYVvaUIq39Gh6rI.jpg",
+      "release_date": "2023-06-15",
+      "title": "Hazme el favor",
+      "video": false,
+      "vote_average": 5.3,
+      "vote_count": 20
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ceYZCBfwbBwSpGJ6PapNVw5jqLG.jpg",
+      "genre_ids": [
+        16,
+        18,
+        12,
+        14
+      ],
+      "id": 916224,
+      "original_language": "ja",
+      "original_title": "すずめの戸締まり",
+      "overview": "Una joven de 17 años llamada Suzume ayuda a un misterioso joven a cerrar las puertas de otro mundo que están provocando desastres en todo Japón.",
+      "popularity": 299.552,
+      "poster_path": "/iUfWPVyuLA4wZ5EetHyyGsi25SF.jpg",
+      "release_date": "2022-11-11",
+      "title": "Suzume",
+      "video": false,
+      "vote_average": 7.9,
+      "vote_count": 437
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/o3YleBe0QGNNlUqm6CnJVqGQQH4.jpg",
+      "genre_ids": [
+        35,
+        12,
+        14
+      ],
+      "id": 798286,
+      "original_language": "en",
+      "original_title": "Beau Is Afraid",
+      "overview": "Beau es un hombre que tendrá que enfrentarse a sus miedos y paranoias al aventurarse en una épica odisea para llegar a casa de su controladora madre.",
+      "popularity": 243.835,
+      "poster_path": "/6bvITjsMqTcPYQDqiLEkL1SJ27p.jpg",
+      "release_date": "2023-04-14",
+      "title": "Beau tiene miedo",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 340
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zPcuuhwZFDzBTc66wtrLZ2qX5y4.jpg",
+      "genre_ids": [
+        12,
+        28
+      ],
+      "id": 335977,
+      "original_language": "en",
+      "original_title": "Indiana Jones and the Dial of Destiny",
+      "overview": "El arqueólogo Indiana Jones deberá emprender otra aventura contra el tiempo para intentar recuperar un dial legendario que puede cambiar el curso de la historia. Acompañado por su ahijada, Jones pronto se encuentra enfrentándose a Jürgen Voller, un ex nazi que trabaja para la NASA.",
+      "popularity": 169.092,
+      "poster_path": "/3Sj5ubQ0BLXd6JuECq52Ira8Oor.jpg",
+      "release_date": "2023-06-28",
+      "title": "Indiana Jones y el dial del destino",
+      "video": false,
+      "vote_average": 5.4,
+      "vote_count": 4
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sp7MPK2K60LLd7A6zjHKsfgjFil.jpg",
+      "genre_ids": [
+        27,
+        14,
+        878,
+        53
+      ],
+      "id": 296271,
+      "original_language": "en",
+      "original_title": "The Devil Conspiracy",
+      "overview": "Una poderosa empresa de biotecnología tiene una tecnología innovadora que les permite clonar las figuras más influyentes. Detrás de esta, hay un culto satánico que busca robar el Sudario de Cristo, pues contiene el ADN de Jesús. Esto desatará la guerra de los ángeles en la Tierra.",
+      "popularity": 136.663,
+      "poster_path": "/BUQB3FuLrMyPD6khjawrHePyLo.jpg",
+      "release_date": "2023-01-13",
+      "title": "La Conspiración del Diablo",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 180
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1PQqvw7wnGeWqvXcBLaGK46n0zk.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        28,
+        14,
+        10749
+      ],
+      "id": 496450,
+      "original_language": "fr",
+      "original_title": "Miraculous - le film",
+      "overview": "",
+      "popularity": 135.066,
+      "poster_path": "/u0OMTZrva4WKZ2SmoNYI8eVDTkd.jpg",
+      "release_date": "2023-07-05",
+      "title": "Miraculous: Las aventuras de Ladybug - La película",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ioCuhiUs0SW5UgembG0UiQZWPLY.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        14,
+        35
+      ],
+      "id": 1040148,
+      "original_language": "en",
+      "original_title": "Ruby Gillman, Teenage Kraken",
+      "overview": "Una adolescente tímida descubre que es parte de un legendario linaje real de míticos krakens marinos y que su destino, en las profundidades de los océanos, es más grande de lo que jamás soñó.",
+      "popularity": 130.584,
+      "poster_path": "/qa465Bqi8a2YUIQDDi0ZbMDbhLa.jpg",
+      "release_date": "2023-06-28",
+      "title": "Krakens y sirenas: Conoce a los Gillman",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jOkXeuLo4MBMpeoMa1ClAfTkxuI.jpg",
+      "genre_ids": [
+        27,
+        9648,
+        53
+      ],
+      "id": 614479,
+      "original_language": "en",
+      "original_title": "Insidious: The Red Door",
+      "overview": "El Capítulo 5 continuará con la familia Lambert diez años después de los eventos del Capítulo 2, cuando su hijo Dalton comience la universidad.",
+      "popularity": 127.695,
+      "poster_path": "/vR2qo6fAsrIyhJ3cbeVdv8YqwWk.jpg",
+      "release_date": "2023-06-16",
+      "title": "La noche del demonio: La puerta roja",
+      "video": false,
+      "vote_average": 10,
+      "vote_count": 2
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/mD803gOPzdJxkibrGH20XTtEzYq.jpg",
+      "genre_ids": [
+        28,
+        12,
+        53
+      ],
+      "id": 575264,
+      "original_language": "en",
+      "original_title": "Mission: Impossible - Dead Reckoning Part One",
+      "overview": "",
+      "popularity": 127.544,
+      "poster_path": "/83sGKvCv2T2CulYbd40Aeduc7n2.jpg",
+      "release_date": "2023-07-09",
+      "title": "Misión: Imposible - Sentencia mortal parte uno",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jv9WTuEk7kW8JxgpjQ872CyiifP.jpg",
+      "genre_ids": [
+        10749,
+        18,
+        35
+      ],
+      "id": 758336,
+      "original_language": "en",
+      "original_title": "Love Again",
+      "overview": "Mientras intenta superar la pérdida de su prometido, Mira Ray envía una serie de mensajes románticos a su antiguo número de teléfono, sin tener en cuenta que el número había sido reasignado al nuevo teléfono de trabajo de Rob Burns. Rob, periodista, queda sorprendido por la honestidad de los mensajes de texto. Cuando le asignan la tarea de escribir un artículo sobre la mega estrella Celine Dion, él le pide ayuda para averiguar cómo conocer a Mira en persona... y conquistar así su corazón.",
+      "popularity": 119.212,
+      "poster_path": "/uFZp6cZjASgJhoRZ6nLP9CrWwAC.jpg",
+      "release_date": "2023-05-04",
+      "title": "Amor a primer mensaje",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 100
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1PRWW60yQparK1I8Soyy9Evf7Dv.jpg",
+      "genre_ids": [
+        16,
+        35,
+        18,
+        10751
+      ],
+      "id": 869626,
+      "original_language": "en",
+      "original_title": "Marcel the Shell with Shoes On",
+      "overview": "Marcel es un adorable caparazón de una pulgada de alto que se gana la vida con su abuela Connie y su mascota, Alan. Una vez que formaron parte de una comunidad en expansión de caparazones, ahora viven solos como los únicos sobrevivientes de una misteriosa tragedia. Pero cuando un realizador de documentales los descubre entre el desorden de su Airbnb, el cortometraje que publica en línea trae a Marcel millones de fanáticos apasionados, así como peligros sin precedentes y una nueva esperanza de encontrar a su familia perdida hace mucho tiempo.",
+      "popularity": 112.837,
+      "poster_path": "/x9VPPEYxv19AEdEoWccVAF1HKot.jpg",
+      "release_date": "2022-06-24",
+      "title": "Marcel, el caracol con zapatos",
+      "video": false,
+      "vote_average": 7.7,
+      "vote_count": 295
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7CSILt4l54Kxsk0DzQTYPq9WojO.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 985617,
+      "original_language": "en",
+      "original_title": "Reality",
+      "overview": "Una antigua especialista de inteligencia estadounidense recibe la sentencia más larga por la divulgación no autorizada de información del gobierno a los medios sobre la interferencia rusa en las elecciones estadounidenses de 2016 a través de una operación de correo electrónico.",
+      "popularity": 86.121,
+      "poster_path": "/4rS1rcaeIJd2zdTn2G8RMfTNeiV.jpg",
+      "release_date": "2023-06-02",
+      "title": "Reality",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 63
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/prrXkqQre2CRpnTnBSGCMJ8xwCu.jpg",
+      "genre_ids": [
+        35,
+        10749,
+        878
+      ],
+      "id": 747188,
+      "original_language": "en",
+      "original_title": "Asteroid City",
+      "overview": "Un pueblo desértico de EE. UU. cerca del año 1955, el itinerario de una convención de jóvenes astrónomos y cadetes espaciales (organizada para reunir a estudiantes y padres de todo el país en busca de compañerismo y competencia académica) se ve espectacularmente interrumpido por eventos que cambiarán al mundo.",
+      "popularity": 86.019,
+      "poster_path": "/tVVinzk5ixmjHsxpqlBLfVPvfSq.jpg",
+      "release_date": "2023-06-09",
+      "title": "Asteroid City",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 39
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9lIK95xch2fGQEVnBw7BwQMjP8z.jpg",
+      "genre_ids": [
+        18,
+        12,
+        878,
+        10751
+      ],
+      "id": 864101,
+      "original_language": "ru",
+      "original_title": "Мира",
+      "overview": "",
+      "popularity": 80.865,
+      "poster_path": "/7a7orVYVOpS9oQjQOLbOdxTFQt0.jpg",
+      "release_date": "2022-12-22",
+      "title": "Мира",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 15
+    }
+  ],
+  "total_pages": 17,
+  "total_results": 329
+}

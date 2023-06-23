@@ -58,6 +58,41 @@ class NetworkManager: NSObject {
         task.resume()
     }
     
+    func getLisOfTrailers(id: Int, completed: @escaping (Result<[Trailer], APError>) -> Void ) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)/videos?api_key=2cfa8720256036601fb9ac4e4bce1a9b&language=es_MX") else {
+            completed(.failure(.invalidURL))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let _ = error {
+                completed(.failure(.unableToComplete))
+                return
+            }
+            
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completed(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else {
+                completed(.failure(.invalidData))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let decodedResponse = try decoder.decode(TrailerResponse.self, from: data)
+                completed(.success(decodedResponse.results))
+            } catch {
+                print("Debug: decoding error \(error.localizedDescription)")
+                completed(.failure(.decodingError))
+            }
+        }
+        task.resume()
+    }
+    
     func downloadImage(from urlString: String, completed: @escaping (UIImage?) -> Void) {
         
         let cacheKey = NSString(string: urlString)
@@ -89,4 +124,5 @@ class NetworkManager: NSObject {
 struct Constants {
     static let urlImages = "https://image.tmdb.org/t/p/original"
     static let placeholder = "https://cringemdb.com/img/movie-poster-placeholder.png"
+    static let urlTrailer = "uxRm9UiJ0PY&t=12s"
 }
