@@ -21,6 +21,7 @@
 		6CAF40A62A45E79F00CA44B4 /* TrailerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF40A52A45E79F00CA44B4 /* TrailerResponse.swift */; };
 		6CAF40A82A45F0BD00CA44B4 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF40A72A45F0BD00CA44B4 /* MovieCell.swift */; };
 		6CAF40AA2A45F13A00CA44B4 /* MockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF40A92A45F13A00CA44B4 /* MockResponse.json */; };
+		6CAF40AC2A46040600CA44B4 /* TrailerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF40AB2A46040600CA44B4 /* TrailerCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		6CAF40A52A45E79F00CA44B4 /* TrailerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerResponse.swift; sourceTree = "<group>"; };
 		6CAF40A72A45F0BD00CA44B4 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		6CAF40A92A45F13A00CA44B4 /* MockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockResponse.json; sourceTree = "<group>"; };
+		6CAF40AB2A46040600CA44B4 /* TrailerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				6C149E732A42C92E00FFF4DE /* MoviesView.swift */,
 				6C1255C62A454D6400098F08 /* MovieDetailView.swift */,
 				6CAF40A72A45F0BD00CA44B4 /* MovieCell.swift */,
+				6CAF40AB2A46040600CA44B4 /* TrailerCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				6CAF40A62A45E79F00CA44B4 /* TrailerResponse.swift in Sources */,
 				6CAF40A42A45E6C500CA44B4 /* TrailerViewModel.swift in Sources */,
 				6C1255BB2A45481B00098F08 /* NetworkManager.swift in Sources */,
+				6CAF40AC2A46040600CA44B4 /* TrailerCellView.swift in Sources */,
 				6C1255C42A454A6900098F08 /* MoviesViewModel.swift in Sources */,
 				6C149E742A42C92E00FFF4DE /* MoviesView.swift in Sources */,
 				6C1255BD2A45486200098F08 /* MovieDataModel.swift in Sources */,

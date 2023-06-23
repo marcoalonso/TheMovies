@@ -37,34 +37,22 @@ struct MovieDetailView: View {
             Text(movie?.release_date ?? "")
                 .font(.title3)
             
-                
-            List(viewModel.listOfTrailers, id: \.key) { trailer in
-                HStack {
-                    AsyncImage(url: URL(string: movie?.backdrop_path ?? "")) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                        
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .frame(width: 80, height: 50)
-                    .clipShape(Circle())
-                    .shadow(radius: 12)
-                    
-                    VStack {
-                        Text(trailer.name)
-                        Text(trailer.published_at)
-                    }
-                    .font(.body)
-                }
-            }
-            .listStyle(.grouped)
-            .frame(maxHeight: 300)
             
-            Spacer()
+            Section(header:
+                        Text("Trailers")
+                        .font(.title2)
+                        .foregroundColor(.accentColor)
+                    
+            ) {
+                List(viewModel.listOfTrailers, id: \.key) { trailer in
+                    TrailerCellView(urlMovie: movie?.backdrop_path ?? "", trailer: trailer)
+                }
+                .listStyle(.inset)
+                .frame(maxHeight: 300)
+
+            }//Header
                 .navigationBarTitle(movie?.title ?? movie?.original_title ?? "", displayMode: .inline)
-        }
+        }//Vstack
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         }
