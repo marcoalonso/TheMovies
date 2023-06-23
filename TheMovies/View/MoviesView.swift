@@ -17,9 +17,14 @@ struct MoviesView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
+                Text("Proximos estrenos")
+                    .font(.title)
+                    .foregroundColor(.accentColor)
+                
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: gridItemLayout, spacing: 50) {
-                            ForEach(viewModel.movies, id: \.id) { movie in
+                            ForEach(viewModel.upcomingMovies, id: \.id) { movie in
                                 NavigationLink {
                                     MovieDetailView(movie: movie)
                                 } label: {
@@ -29,9 +34,12 @@ struct MoviesView: View {
                         }///LazyHGrid
                 }//Scrolview
                 
+                Text("Ahora en cines")
+                    .font(.title)
+                    .foregroundColor(.accentColor)
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: gridItemLayout, spacing: 50) {
-                            ForEach(viewModel.movies, id: \.id) { movie in
+                            ForEach(viewModel.nowplayingMovies, id: \.id) { movie in
                                 NavigationLink {
                                     MovieDetailView(movie: movie)
                                 } label: {
@@ -41,9 +49,12 @@ struct MoviesView: View {
                         }///LazyHGrid
                 }//Scrolview
                 
+                Text("Tendencia")
+                    .font(.title)
+                    .foregroundColor(.accentColor)
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: gridItemLayout, spacing: 50) {
-                            ForEach(viewModel.movies, id: \.id) { movie in
+                            ForEach(viewModel.trendingMovies, id: \.id) { movie in
                                 NavigationLink {
                                     MovieDetailView(movie: movie)
                                 } label: {
@@ -52,8 +63,8 @@ struct MoviesView: View {
                             }
                         }///LazyHGrid
                 }//Scrolview
+                
             }
-            .navigationBarTitle("Estrenos", displayMode: .inline)
         }
     }
 }
