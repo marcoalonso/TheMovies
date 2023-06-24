@@ -10,7 +10,7 @@ import SwiftUI
 struct MoviesView: View {
     
     @StateObject private var viewModel = MoviesViewModel()
-    
+    @State private var goToSearch = false
    
     var gridItemLayout = [GridItem(.flexible())]
     
@@ -68,6 +68,12 @@ struct MoviesView: View {
                     }
                 }.padding(20)
             }
+            .navigationBarTitle("Movieverse World", displayMode: .inline)
+            .navigationBarItems(leading: NavigationLink(destination: {
+                SearchMoviesView()
+            }, label: {
+                Image(systemName: "magnifyingglass")
+            }))
         }
     }
 }
