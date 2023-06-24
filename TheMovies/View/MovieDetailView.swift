@@ -13,6 +13,7 @@ struct MovieDetailView: View {
     @StateObject private var viewModel = TrailerViewModel()
     @State private var showTrailer = false
     @State private var urlTrailerSelected: String = ""
+    @State private var isShowingActivityView = false
     
     let movie: DataMovie?
     var idVideo: String = ""
@@ -58,10 +59,18 @@ struct MovieDetailView: View {
 
             }//Header
                 .navigationBarTitle(movie?.title ?? movie?.original_title ?? "", displayMode: .inline)
+                .navigationBarItems(trailing: Button(action: {
+                    isShowingActivityView = true
+                }, label: {
+                    Image(systemName: "square.and.arrow.up.fill")
+                }))
         }//Vstack
         .sheet(isPresented: $showTrailer, content: {
             TrailerFullScreenView(urlTrailer: $urlTrailerSelected)
         })
+        .sheet(isPresented: $isShowingActivityView, content: {
+                    ActivityView(activityItems: ["https://apps.apple.com/us/app/movieverse-world/id6447369429"])
+                })
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         }
