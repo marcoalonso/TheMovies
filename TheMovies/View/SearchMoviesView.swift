@@ -17,27 +17,29 @@ struct SearchMoviesView: View {
     ]
     
     var body: some View {
-        
-        VStack {
-            ScrollView {
-                LazyVGrid(columns: fixedColumns, spacing: 20) {
-                    ForEach(viewModel.moviesFounded, id: \.id) { movie in
-                        NavigationLink {
-                            MovieDetailView(movie: movie)
-                        } label: {
-                            MovieCell(movie: movie)
-                                .frame(width: 150, height: 200)
+        NavigationView {
+            VStack {
+                ScrollView {
+                    LazyVGrid(columns: fixedColumns, spacing: 20) {
+                        ForEach(viewModel.moviesFounded, id: \.id) { movie in
+                            NavigationLink {
+                                MovieDetailView(movie: movie)
+                            } label: {
+                                MovieCell(movie: movie)
+                                    .frame(width: 150, height: 200)
+                            }
                         }
-                    }
-                }//LazyHGrid
-            }.padding(12)
-
-        }
-        .padding(.leading, 10)
-        .padding(.trailing, 10)
-        .searchable(text: $nameOfMovie, prompt: "nombre pelicula")
-        .onChange(of: nameOfMovie) { name in
-            viewModel.searchMovie(name: name)
+                    }//LazyHGrid
+                }.padding(12)
+                
+            }
+            .navigationTitle("Search Movies")
+            .padding(.leading, 10)
+            .padding(.trailing, 10)
+            .searchable(text: $nameOfMovie, prompt: "nombre pelicula")
+            .onChange(of: nameOfMovie) { name in
+                viewModel.searchMovie(name: name)
+            }
         }
     }
 }

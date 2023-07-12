@@ -39,31 +39,23 @@ struct MovieDetailView: View {
                 .font(.title3)
             
             
-            Section(header:
-                        Text("Trailers")
-                        .font(.title2)
-                        .foregroundColor(.accentColor)
-                    
-            ) {
-                List(viewModel.listOfTrailers, id: \.key) { trailer in
-                    TrailerCellView(urlMovie: movie?.backdrop_path ?? "", trailer: trailer)
-                        .onTapGesture {
-                        self.urlTrailerSelected = trailer.key
-                            print("Debug: \(self.urlTrailerSelected)")
+            List(viewModel.listOfTrailers, id: \.key) { trailer in
+                TrailerCellView(urlMovie: movie?.backdrop_path ?? "", trailer: trailer)
+                    .onTapGesture {
+                    self.urlTrailerSelected = trailer.key
+                        print("Debug: \(self.urlTrailerSelected)")
 
-                        showTrailer = true
-                    }
+                    showTrailer = true
                 }
-                .listStyle(.inset)
-                .frame(maxHeight: 300)
-
-            }//Header
-                .navigationBarTitle(movie?.title ?? movie?.original_title ?? "", displayMode: .inline)
-                .navigationBarItems(trailing: Button(action: {
-                    isShowingActivityView = true
-                }, label: {
-                    Image(systemName: "square.and.arrow.up.fill")
-                }))
+            }
+            .listStyle(.inset)
+            .frame(maxHeight: 300)
+            
+            .navigationBarItems(trailing: Button(action: {
+                isShowingActivityView = true
+            }, label: {
+                Image(systemName: "square.and.arrow.up.fill")
+            }))
         }//Vstack
         .sheet(isPresented: $showTrailer, content: {
             TrailerFullScreenView(urlTrailer: $urlTrailerSelected)

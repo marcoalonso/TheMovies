@@ -69,11 +69,6 @@ struct MoviesView: View {
                 }.padding(20)
             }
             .navigationBarTitle("Movieverse World", displayMode: .inline)
-            .navigationBarItems(leading: NavigationLink(destination: {
-                SearchMoviesView()
-            }, label: {
-                Image(systemName: "magnifyingglass")
-            }))
         }
     }
 }
