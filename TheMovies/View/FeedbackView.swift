@@ -17,33 +17,51 @@ struct FeedbackView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                List(actions) { action in
-                    Button {
-                        urlToShow = action.url
-                        isShowingURL = true
-                    } label: {
-                        HStack {
-                            Image(systemName: action.icon)
-                                .resizable()
-                                .frame(width: 25, height: 25)
-                            
-                            Text(action.name)
-                                .font(.body)
-                        }.padding(12)
-                    }
-                }.listStyle(.plain)
-                    .frame(height: .infinity)
+                
+                    List(actions) { action in
+                        Button {
+                            urlToShow = action.url
+                            isShowingURL = true
+                        } label: {
+                            HStack {
+                                Image(systemName: action.icon)
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                
+                                Text(action.name)
+                                    .font(.body)
+                            }.padding(6)
+                        }
+                    }.listStyle(.inset)
+                
+                Section(header: Text("Cines")) {
+                    List(cines) { cine in
+                        Button {
+                            urlToShow = cine.url
+                            isShowingURL = true
+                        } label: {
+                            HStack {
+                                Image(systemName: cine.icon)
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                
+                                Text(cine.name)
+                                    .font(.body)
+                            }.padding(2)
+                        }
+                    }.listStyle(.plain)
+                }
                 
                 Spacer()
-                
-                    .navigationTitle("Mas Acciones")
-                    .navigationBarItems(trailing: Button(action: {
-                        isShowingActivityView = true
-                    }, label: {
-                        Image(systemName: "square.and.arrow.up.fill")
-                    }))
+                                    
             }//Vstack
-            .navigationBarTitle("Mas Acciones", displayMode: .inline)
+            .padding(10)
+            .navigationBarItems(trailing: Button(action: {
+                isShowingActivityView = true
+            }, label: {
+                Image(systemName: "square.and.arrow.up.fill")
+            }))
+            .navigationBarTitle("Feedback", displayMode: .inline)
             .sheet(isPresented: $isShowingActivityView, content: {
                 ActivityView(activityItems: ["https://apps.apple.com/us/app/top-global-news/id6447653915se-world/id6447369429"])
             })
