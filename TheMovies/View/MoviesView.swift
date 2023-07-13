@@ -17,9 +17,9 @@ struct MoviesView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 10.0) {
+                VStack(spacing: 5.0) {
                     Text("Próximos estrenos")
-                        .font(.largeTitle)
+                        .font(.footnote)
                         .foregroundColor(.accentColor)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: gridItemLayout, spacing: 20) {
@@ -36,7 +36,7 @@ struct MoviesView: View {
                     
                     
                     Text("Ahora en cines")
-                        .font(.largeTitle)
+                        .font(.footnote)
                         .foregroundColor(.accentColor)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: gridItemLayout, spacing: 20) {
@@ -52,7 +52,7 @@ struct MoviesView: View {
                     }
                     
                     Text("Tendencia")
-                        .font(.largeTitle)
+                        .font(.footnote)
                         .foregroundColor(.accentColor)
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: gridItemLayout, spacing: 20) {

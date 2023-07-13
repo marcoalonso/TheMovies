@@ -12,7 +12,7 @@ struct MainTabView: View {
         TabView {
             MoviesView()
                 .tabItem {
-                    Image(systemName: "play")
+                    Image(systemName: "play.rectangle")
                 }
             
             SearchMoviesView()
@@ -20,12 +20,12 @@ struct MainTabView: View {
                     Image(systemName: "magnifyingglass")
                 }
             
-            Text("Profile")
+            FavoritesView()
                 .tabItem {
-                    Image(systemName: "person")
+                    Image(systemName: "star.fill")
                 }
             
-            Text("Configuration")
+            FeedbackView()
                 .tabItem {
                     Image(systemName: "line.3.horizontal.decrease.circle")
                 }
