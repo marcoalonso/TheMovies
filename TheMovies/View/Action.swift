@@ -15,7 +15,7 @@ struct Action: Identifiable {
     let url: String
 }
 
-var actions: [Action] = [
+var informationActions: [Action] = [
 Action(name: "Hacer una sugerencia", action: "sugerencia", icon: "slider.vertical.3", url: "https://forms.gle/guA95kfHXphQHgbx5"),
 Action(name: "Califica la aplicación", action: "califica", icon: "star.leadinghalf.filled", url: "https://apps.apple.com/us/app/top-global-news/id6447653915"),
 Action(name: "Conocer más sobre nosotros", action: "seguir", icon: "hand.thumbsup", url: "https://www.linkedin.com/company/ios-bootcamp-mx"),
