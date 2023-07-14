@@ -27,10 +27,10 @@ struct MainTabView: View {
             
             FeedbackView()
                 .tabItem {
-                    Image(systemName: "line.3.horizontal.decrease.circle")
+                    Image(systemName: "gearshape")
                 }
         }
-        .accentColor(.black)
+        .accentColor(.accentColor)
     }
 }
 

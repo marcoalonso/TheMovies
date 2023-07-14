@@ -9,6 +9,7 @@ import SwiftUI
 import SafariServices
 
 struct FeedbackView: View {
+    @AppStorage("isDarkModeOn") private var isDarkModeOn = false
     
     @State var isShowingActivityView = false
     @State var urlToShow = ""
@@ -16,7 +17,7 @@ struct FeedbackView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 20.0) {
                 
                     List(actions) { action in
                         Button {
@@ -33,6 +34,16 @@ struct FeedbackView: View {
                             }.padding(6)
                         }
                     }.listStyle(.inset)
+                
+                Section(header: Text("Apariencia")) {
+                    Toggle(isOn: $isDarkModeOn) {
+                        HStack(spacing: 20.0) {
+                            Image(systemName: "person.crop.circle.badge.moon.fill")
+                                .imageScale(.large)
+                            Text("Dark mode")
+                        }
+                    }.padding(.horizontal, 20)
+                }
                 
                 Section(header: Text("Cines")) {
                     List(cines) { cine in
@@ -51,6 +62,8 @@ struct FeedbackView: View {
                         }
                     }.listStyle(.plain)
                 }
+                
+                
                 
                 Spacer()
                                     
