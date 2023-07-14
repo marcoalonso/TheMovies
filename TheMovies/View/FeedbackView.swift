@@ -76,7 +76,7 @@ struct FeedbackView: View {
                     
                     // MARK:  Informacion
                     Section(header: Text("Información")) {
-                        List(informationActions) { action in
+                        ForEach(informationActions, id: \.id) { action in
                             Button {
                                 urlToShow = action.url
                                 isShowingURL = true
@@ -89,17 +89,17 @@ struct FeedbackView: View {
                                     Text(action.name)
                                         .font(.body)
                                 }
+                                
                             }
                         }
                         .listStyle(.inset)
-                        .frame(height: 180)
-                        .cornerRadius(12)
+                        .frame(height: 30)
                     }//Section Informacion
                     
                     
                     // MARK:  Cines
                     Section(header: Text("Cines")) {
-                        List(cines) { cine in
+                        ForEach(cines) { cine in
                             Button {
                                 urlToShow = cine.url
                                 isShowingURL = true
@@ -114,9 +114,6 @@ struct FeedbackView: View {
                                 }
                             }
                         }
-                        .listStyle(.plain)
-                        .frame(height: 130)
-                        .cornerRadius(12)
                     }
                     
                     
@@ -129,7 +126,9 @@ struct FeedbackView: View {
                                 Text("Dark mode")
                             }
                         }.padding(.horizontal, 20)
+                            .foregroundColor(.accentColor)
                     }
+                    
 
                 }///Form
                                     
