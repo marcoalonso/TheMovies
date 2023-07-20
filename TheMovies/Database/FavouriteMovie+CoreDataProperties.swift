@@ -18,7 +18,7 @@ extension FavouriteMovie {
 
     @NSManaged public var id: Int64
     @NSManaged public var fecha: String?
-    @NSManaged public var poster: Data?
+    @NSManaged public var urlposter: String?
     @NSManaged public var titulo: String?
     @NSManaged public var descripcion: String?
 

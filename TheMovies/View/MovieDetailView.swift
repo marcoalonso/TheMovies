@@ -8,6 +8,7 @@
 import SwiftUI
 import YouTubeiOSPlayerHelper
 import Kingfisher
+import CoreData
 
 struct MovieDetailView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -16,7 +17,6 @@ struct MovieDetailView: View {
     @State private var urlTrailerSelected: String = ""
     @State private var isShowingActivityView = false
     @State private var isFavourite = false
-    @State private var downloadedImage: Image?
     
     let movie: DataMovie?
     var idVideo: String = ""
@@ -50,22 +50,26 @@ struct MovieDetailView: View {
                     Text("Estreno \(movie?.release_date ?? "")")
                         .font(.title3)
                     Button {
-                        //Mark as favourite
                         isFavourite = true
-                        //                    if let movieToSave = movie {
-                        //                        let newFavouriteMovie = FavouriteMovie(context: self.viewContext)
-                        //                        if let title = movieToSave.title ?? movieToSave.original_title {
-                        //                            newFavouriteMovie.titulo = movieToSave.original_title
-                        //                        } else {
-                        //                            newFavouriteMovie.titulo = ""
-                        //                        }
-                        //                        newFavouriteMovie.id = Int64(movieToSave.id ?? 0)
-                        //                        newFavouriteMovie.descripcion = movieToSave.overview
-                        //                        newFavouriteMovie.fecha = movieToSave.release_date
-                        //                        let data =
-                        //                        newFavouriteMovie.poster =
-                        //
-                        //                    }
+                        if let movieToSave = movie {
+                            let newFavouriteMovie = FavouriteMovie(context: self.viewContext)
+                            if let title = movieToSave.title ?? movieToSave.original_title {
+                                newFavouriteMovie.titulo = movieToSave.original_title
+                            } else {
+                                newFavouriteMovie.titulo = ""
+                            }
+                            newFavouriteMovie.id = Int64(movieToSave.id ?? 0)
+                            newFavouriteMovie.descripcion = movieToSave.overview
+                            newFavouriteMovie.fecha = movieToSave.release_date
+                            newFavouriteMovie.urlposter = movieToSave.poster_path
+                            
+                            do {
+                                try self.viewContext.save()
+                                
+                            } catch {
+                                print("Debug: error saving movie to core data \(error.localizedDescription)")
+                            }
+                        }
                         
                         
                     } label: {

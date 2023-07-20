@@ -130,9 +130,6 @@
 		6C149E652A42C92E00FFF4DE = {
 			isa = PBXGroup;
 			children = (
-				6CAF66C32A68FA1E00744590 /* FavouriteMovie+CoreDataClass.swift */,
-				6CAF66C42A68FA1E00744590 /* FavouriteMovie+CoreDataProperties.swift */,
-				6CAF66C92A68FBB500744590 /* Persistence.swift */,
 				6C149E702A42C92E00FFF4DE /* TheMovies */,
 				6C149E6F2A42C92E00FFF4DE /* Products */,
 			);
@@ -149,14 +146,14 @@
 		6C149E702A42C92E00FFF4DE /* TheMovies */ = {
 			isa = PBXGroup;
 			children = (
+				6C149E712A42C92E00FFF4DE /* TheMoviesApp.swift */,
+				6CAF66CB2A6908D200744590 /* Database */,
 				6C1255BE2A45486800098F08 /* Model */,
 				6C1255C52A454D5700098F08 /* View */,
 				6C1255C22A454A5100098F08 /* ViewModel */,
-				6C149E712A42C92E00FFF4DE /* TheMoviesApp.swift */,
 				6C149E752A42C93000FFF4DE /* Assets.xcassets */,
 				6C149E772A42C93000FFF4DE /* Preview Content */,
 				6C1255BF2A45486E00098F08 /* Utilities */,
-				6CAF66C02A68F9A600744590 /* FavouriteMovies.xcdatamodeld */,
 			);
 			path = TheMovies;
 			sourceTree = "<group>";
@@ -167,6 +164,17 @@
 				6C149E782A42C93000FFF4DE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6CAF66CB2A6908D200744590 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6CAF66C02A68F9A600744590 /* FavouriteMovies.xcdatamodeld */,
+				6CAF66C32A68FA1E00744590 /* FavouriteMovie+CoreDataClass.swift */,
+				6CAF66C42A68FA1E00744590 /* FavouriteMovie+CoreDataProperties.swift */,
+				6CAF66C92A68FBB500744590 /* Persistence.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct TheMoviesApp: App {
     @AppStorage("isDarkModeOn") private var isDarkModeOn = false
-//    let persistenceController = PersistenceController.shared
+    let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
             MainTabView()
                 .preferredColorScheme(isDarkModeOn ? .dark : .light)
-               // .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
