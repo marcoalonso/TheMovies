@@ -14,12 +14,13 @@ struct MovieDetailView: View {
     @State private var showTrailer = false
     @State private var urlTrailerSelected: String = ""
     @State private var isShowingActivityView = false
-    
+    @State private var isFavourite = false
     let movie: DataMovie?
     var idVideo: String = ""
     
     var body: some View {
         VStack(spacing: 10.0) {
+            
             
             if !viewModel.listOfTrailers.isEmpty {
                 YTWrapper(videoID: "\(viewModel.listOfTrailers[0].key)")
@@ -31,12 +32,29 @@ struct MovieDetailView: View {
                 ProgressView()
             }
             
+            Text(movie?.title ?? movie?.original_title ?? "")
+                .font(.title3)
+                .bold()
+                .foregroundColor(.accentColor)
+                .padding(.horizontal)
+            
             Text(movie?.overview ?? "")
                 .multilineTextAlignment(.center)
+                .lineLimit(3)
                 .font(.body)
             
-            Text(movie?.release_date ?? "")
-                .font(.title3)
+            HStack {
+                Text("Estreno \(movie?.release_date ?? "")")
+                    .font(.title3)
+                Button {
+                    //Mark as favourite
+                    isFavourite.toggle()
+                    //Guardar un nuevo elemento en BD con todos los parametros
+                } label: {
+                    Image(systemName: isFavourite ? "heart.fill" : "heart")
+                }
+
+            }
             
             
             List(viewModel.listOfTrailers, id: \.key) { trailer in
