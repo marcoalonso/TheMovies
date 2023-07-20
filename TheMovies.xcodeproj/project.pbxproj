@@ -30,6 +30,9 @@
 		6CAF40A82A45F0BD00CA44B4 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF40A72A45F0BD00CA44B4 /* MovieCell.swift */; };
 		6CAF40AA2A45F13A00CA44B4 /* MockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF40A92A45F13A00CA44B4 /* MockResponse.json */; };
 		6CAF40AC2A46040600CA44B4 /* TrailerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF40AB2A46040600CA44B4 /* TrailerCellView.swift */; };
+		6CAF66C22A68F9A600744590 /* FavouriteMovies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF66C02A68F9A600744590 /* FavouriteMovies.xcdatamodeld */; };
+		6CAF66C52A68FA1E00744590 /* FavouriteMovie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF66C32A68FA1E00744590 /* FavouriteMovie+CoreDataClass.swift */; };
+		6CAF66C62A68FA1E00744590 /* FavouriteMovie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF66C42A68FA1E00744590 /* FavouriteMovie+CoreDataProperties.swift */; };
 		6CB249022A46081300E5DAAF /* TrailerFullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB249012A46081300E5DAAF /* TrailerFullScreenView.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,9 @@
 		6CAF40A72A45F0BD00CA44B4 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		6CAF40A92A45F13A00CA44B4 /* MockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockResponse.json; sourceTree = "<group>"; };
 		6CAF40AB2A46040600CA44B4 /* TrailerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerCellView.swift; sourceTree = "<group>"; };
+		6CAF66C12A68F9A600744590 /* FavouriteMovies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavouriteMovies.xcdatamodel; sourceTree = "<group>"; };
+		6CAF66C32A68FA1E00744590 /* FavouriteMovie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteMovie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6CAF66C42A68FA1E00744590 /* FavouriteMovie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteMovie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6CB249012A46081300E5DAAF /* TrailerFullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerFullScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +128,8 @@
 		6C149E652A42C92E00FFF4DE = {
 			isa = PBXGroup;
 			children = (
+				6CAF66C32A68FA1E00744590 /* FavouriteMovie+CoreDataClass.swift */,
+				6CAF66C42A68FA1E00744590 /* FavouriteMovie+CoreDataProperties.swift */,
 				6C149E702A42C92E00FFF4DE /* TheMovies */,
 				6C149E6F2A42C92E00FFF4DE /* Products */,
 			);
@@ -145,6 +153,7 @@
 				6C149E752A42C93000FFF4DE /* Assets.xcassets */,
 				6C149E772A42C93000FFF4DE /* Preview Content */,
 				6C1255BF2A45486E00098F08 /* Utilities */,
+				6CAF66C02A68F9A600744590 /* FavouriteMovies.xcdatamodeld */,
 			);
 			path = TheMovies;
 			sourceTree = "<group>";
@@ -240,14 +249,17 @@
 				6C05C6BD2A5FB7EB00D41915 /* Action.swift in Sources */,
 				6CAF40A42A45E6C500CA44B4 /* TrailerViewModel.swift in Sources */,
 				6C1255BB2A45481B00098F08 /* NetworkManager.swift in Sources */,
+				6CAF66C62A68FA1E00744590 /* FavouriteMovie+CoreDataProperties.swift in Sources */,
 				6C25B3752A5F6993005E1C3F /* MainTabView.swift in Sources */,
 				6CB249022A46081300E5DAAF /* TrailerFullScreenView.swift in Sources */,
 				6CAF40AC2A46040600CA44B4 /* TrailerCellView.swift in Sources */,
 				6C1255C42A454A6900098F08 /* MoviesViewModel.swift in Sources */,
+				6CAF66C22A68F9A600744590 /* FavouriteMovies.xcdatamodeld in Sources */,
 				6C149E742A42C92E00FFF4DE /* MoviesView.swift in Sources */,
 				6C3D7D4D2A46676A004158AA /* SearchMoviesView.swift in Sources */,
 				6C3D7D512A466FB3004158AA /* ActivityView.swift in Sources */,
 				6C1255BD2A45486200098F08 /* MovieDataModel.swift in Sources */,
+				6CAF66C52A68FA1E00744590 /* FavouriteMovie+CoreDataClass.swift in Sources */,
 				6C3D7D4F2A46694A004158AA /* SearchMoviesViewModel.swift in Sources */,
 				6C1255C12A4549BB00098F08 /* AlertItem.swift in Sources */,
 				6C149E722A42C92E00FFF4DE /* TheMoviesApp.swift in Sources */,
@@ -487,6 +499,19 @@
 			productName = YouTubeiOSPlayerHelper;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		6CAF66C02A68F9A600744590 /* FavouriteMovies.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6CAF66C12A68F9A600744590 /* FavouriteMovies.xcdatamodel */,
+			);
+			currentVersion = 6CAF66C12A68F9A600744590 /* FavouriteMovies.xcdatamodel */;
+			path = FavouriteMovies.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6C149E662A42C92E00FFF4DE /* Project object */;
 }
