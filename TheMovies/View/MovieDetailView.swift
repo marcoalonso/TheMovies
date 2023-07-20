@@ -7,88 +7,119 @@
 
 import SwiftUI
 import YouTubeiOSPlayerHelper
+import Kingfisher
 
 struct MovieDetailView: View {
-    
+    @Environment(\.managedObjectContext) private var viewContext
     @StateObject private var viewModel = TrailerViewModel()
     @State private var showTrailer = false
     @State private var urlTrailerSelected: String = ""
     @State private var isShowingActivityView = false
     @State private var isFavourite = false
+    @State private var downloadedImage: Image?
+    
     let movie: DataMovie?
     var idVideo: String = ""
     
     var body: some View {
-        VStack(spacing: 10.0) {
-            
-            
-            if !viewModel.listOfTrailers.isEmpty {
-                YTWrapper(videoID: "\(viewModel.listOfTrailers[0].key)")
-                    .frame(height: 200)
-                    .cornerRadius(12)
-            }
-           
-            if viewModel.isLoading {
-                ProgressView()
-            }
-            
-            Text(movie?.title ?? movie?.original_title ?? "")
-                .font(.title3)
-                .bold()
-                .foregroundColor(.accentColor)
-                .padding(.horizontal)
-            
-            Text(movie?.overview ?? "")
-                .multilineTextAlignment(.center)
-                .lineLimit(3)
-                .font(.body)
-            
-            HStack {
-                Text("Estreno \(movie?.release_date ?? "")")
+        ScrollView {
+            VStack(spacing: 20.0) {
+                ///Trailer View
+                if !viewModel.listOfTrailers.isEmpty {
+                    YTWrapper(videoID: "\(viewModel.listOfTrailers[0].key)")
+                        .frame(height: 200)
+                        .cornerRadius(12)
+                }
+                
+                if viewModel.isLoading {
+                    ProgressView()
+                }
+                
+                ///Title
+                Text(movie?.title ?? movie?.original_title ?? "")
                     .font(.title3)
-                Button {
-                    //Mark as favourite
-                    isFavourite.toggle()
-                    //Guardar un nuevo elemento en BD con todos los parametros
-                } label: {
-                    Image(systemName: isFavourite ? "heart.fill" : "heart")
+                    .bold()
+                    .foregroundColor(.accentColor)
+                    .padding(.horizontal)
+                ///Description
+                Text(movie?.overview ?? "")
+                    .multilineTextAlignment(.center)
+                    .font(.caption)
+                
+                HStack {
+                    Text("Estreno \(movie?.release_date ?? "")")
+                        .font(.title3)
+                    Button {
+                        //Mark as favourite
+                        isFavourite = true
+                        //                    if let movieToSave = movie {
+                        //                        let newFavouriteMovie = FavouriteMovie(context: self.viewContext)
+                        //                        if let title = movieToSave.title ?? movieToSave.original_title {
+                        //                            newFavouriteMovie.titulo = movieToSave.original_title
+                        //                        } else {
+                        //                            newFavouriteMovie.titulo = ""
+                        //                        }
+                        //                        newFavouriteMovie.id = Int64(movieToSave.id ?? 0)
+                        //                        newFavouriteMovie.descripcion = movieToSave.overview
+                        //                        newFavouriteMovie.fecha = movieToSave.release_date
+                        //                        let data =
+                        //                        newFavouriteMovie.poster =
+                        //
+                        //                    }
+                        
+                        
+                    } label: {
+                        Image(systemName: isFavourite ? "heart.fill" : "heart")
+                    }
+                    
                 }
-
-            }
-            
-            
-            List(viewModel.listOfTrailers, id: \.key) { trailer in
-                TrailerCellView(urlMovie: movie?.backdrop_path ?? "", trailer: trailer)
-                    .onTapGesture {
-                    self.urlTrailerSelected = trailer.key
-                        print("Debug: \(self.urlTrailerSelected)")
-
-                    showTrailer = true
+                
+                ScrollView {
+                    ForEach(viewModel.listOfTrailers, id: \.key) { trailer in
+                        TrailerCellView(urlMovie: movie?.backdrop_path ?? "", trailer: trailer)
+                            .onTapGesture {
+                                self.urlTrailerSelected = trailer.key
+                                print("Debug: \(self.urlTrailerSelected)")
+                                showTrailer = true
+                            }
+                    }
                 }
+                
+                .frame(height: 300)
+                
+                ///Image
+                KFImage(URL(string: "\(Constants.urlImages)\(movie?.backdrop_path ?? Constants.placeholder)"))
+                    .resizable()
+                    .placeholder({ progres in
+                        ProgressView()
+                    })
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 200)
+                    .shadow(radius: 12)
+                    .cornerRadius(12)
+                    .padding(.horizontal, 20)
+                
+                
+                .navigationBarItems(trailing: Button(action: {
+                    isShowingActivityView = true
+                }, label: {
+                    Image(systemName: "square.and.arrow.up.fill")
+                }))
+            }//Vstack
+            .sheet(isPresented: $showTrailer, content: {
+                TrailerFullScreenView(urlTrailer: $urlTrailerSelected)
+            })
+            .sheet(isPresented: $isShowingActivityView, content: {
+                ActivityView(activityItems: ["https://apps.apple.com/us/app/movieverse-world/id6447369429"])
+            })
+            .alert(item: $viewModel.alertItem) { alertItem in
+                Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
             }
-            .listStyle(.inset)
-            .frame(maxHeight: 300)
-            
-            .navigationBarItems(trailing: Button(action: {
-                isShowingActivityView = true
-            }, label: {
-                Image(systemName: "square.and.arrow.up.fill")
-            }))
-        }//Vstack
-        .sheet(isPresented: $showTrailer, content: {
-            TrailerFullScreenView(urlTrailer: $urlTrailerSelected)
-        })
-        .sheet(isPresented: $isShowingActivityView, content: {
-                    ActivityView(activityItems: ["https://apps.apple.com/us/app/movieverse-world/id6447369429"])
-                })
-        .alert(item: $viewModel.alertItem) { alertItem in
-            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
+            .onAppear {
+                viewModel.getTrailers(id: movie?.id ?? 536437)
+            }
+            .padding(5)
         }
-        .onAppear {
-            viewModel.getTrailers(id: movie?.id ?? 536437)
-        }
-        .padding(5)
-        
     }
 }
 
